@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1747507827395,
+      "tag": "0000_clear_unicorn",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1747539408533,
+      "tag": "0001_bumpy_the_liberteens",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1747758161804,
+      "tag": "0002_minor_molly_hayes",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1747758184485,
+      "tag": "0003_absurd_stature",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1748103123190,
+      "tag": "0004_loud_maximus",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1748107527471,
+      "tag": "0005_reflective_unicorn",
+      "breakpoints": true
+    }
+  ]
+}
