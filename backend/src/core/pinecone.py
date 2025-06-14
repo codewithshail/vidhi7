@@ -23,7 +23,11 @@ if index_name not in existing_indexes:
 pinecone_index = pc.Index(index_name)
 
 # Initialize embedding model
-embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embedding_model = HuggingFaceEmbeddings(
+    model_name="all-MiniLM-L6-v2",
+    model_kwargs={'device': 'cpu'},  # Force CPU usage
+    encode_kwargs={'normalize_embeddings': True}
+)
 
 
 def build_pinecone_session(text_chunks: List[str], session_id: str):
