@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Vidhi7 AI",
   description: "Your AI companion for instant legal insights and assistance.",
-  icons: "/icon.ico",
+  icons: "/logo.svg",
 };
 
 export default function RootLayout({

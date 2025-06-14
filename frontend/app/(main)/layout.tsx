@@ -46,7 +46,14 @@ function ChatbotLayout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 z-20 w-full border-r bg-card p-4">
+          <div className="absolute bottom-0 left-0 z-20 w-full border-r bg-card p-4 space-y-2">
+            <Button
+              variant={"outline"}
+              className="w-full"
+              onClick={() => router.push("/ai-ocr")}
+            >
+              AI OCR
+            </Button>
             <Button
               variant={"outline"}
               className="w-full"

@@ -9,7 +9,7 @@ import { IconCall, IconLawyerSolid, IconLoader, IconMail } from "@/lib/icons";
 
 import LawyerRegisterationForm from "./_components/lawyer-registeration-form";
 import SearchBar from "./_components/search-bar";
-import { fakeLawyersData, popularCategories } from "./constant";
+import {  popularCategories } from "./constant";
 
 function Dashboard() {
   const [showLawyerRegistrationForm, setShowLawyerRegistrationForm] =
@@ -19,7 +19,7 @@ function Dashboard() {
     queryKey: ["lawyerInfo"],
     queryFn: async () => {
       const lawyersInfo = await getLawyersInfo();
-      return [...(lawyersInfo ?? []), ...fakeLawyersData];
+      return [...(lawyersInfo ?? [])];
     },
   });
 

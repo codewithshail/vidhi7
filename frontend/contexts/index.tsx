@@ -15,7 +15,7 @@ function ContextsProvider({ children }: { children: React.ReactNode }) {
         <AppProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem={false}
             disableTransitionOnChange
           >
