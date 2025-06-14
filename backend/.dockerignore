@@ -34,8 +34,15 @@ Thumbs.db
 .gitignore
 
 # Docker
-Dockerfile
 docker-compose.yml
 
 # uv cache
 .uv/
+
+# Additional exclusions to speed up build
+*.md
+README*
+docs/
+tests/
+.pytest_cache/
+node_modules/

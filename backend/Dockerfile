@@ -1,17 +1,26 @@
-FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
-ENV UV_COMPILE_BYTECODE=1
-ENV UV_LINK_MODE=copy
+# Install system dependencies for faster builds
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
 
-COPY pyproject.toml uv.lock ./
-RUN uv sync --frozen --no-install-project --no-dev
+# Copy requirements first for better Docker layer caching
+COPY requirements.txt .
 
+# Install Python dependencies with optimizations
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
 COPY . .
-RUN uv sync --frozen --no-dev
 
+# Expose port
 EXPOSE 8000
-ENV PATH="/app/.venv/bin:$PATH"
-ENTRYPOINT []
+
+# Run the application
 CMD ["python", "main.py"]
